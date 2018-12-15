@@ -13,3 +13,6 @@
 *= require mobile
 *= require_self
 */
+
+@import "jquery-ui.min.css";
+@import "animate.css";
