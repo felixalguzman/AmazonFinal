@@ -19,117 +19,46 @@
 
 <body>
 
-<div class="container dark-grey-text mt-5">
 
-    <!--Grid row-->
-    <div class="row wow fadeIn">
+<div class="shop-grid">
+        <!-- normal -->
+    <div class="container">
 
-        <!--Grid column-->
-        <div class="col-md-6 mb-4">
+        <g:each in="${articulos}" var="articulo">
 
-            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg" class="img-fluid" alt="">
+            <div class="col-md-4 grid-stn simpleCart_shelfItem">
+                <div class="ih-item square effect3 bottom_to_top">
+                    <div class="bottom-2-top">
+                        <g:if test="${articulo.foto == null || articulo.foto == ""}">
 
-        </div>
-        <!--Grid column-->
+                            <div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png" width="300px" height="200px" alt="/" class="img-responsive gri-wid"></div>
 
-        <!--Grid column-->
-        <div class="col-md-6 mb-4">
-
-            <!--Content-->
-            <div class="p-4">
-
-                <div class="mb-3">
-                    <a href="">
-                        <span class="badge purple mr-1">Category 2</span>
-                    </a>
-                    <a href="">
-                        <span class="badge blue mr-1">New</span>
-                    </a>
-                    <a href="">
-                        <span class="badge red mr-1">Bestseller</span>
-                    </a>
+                        </g:if>
+                        <g:else>
+                            <div class="img"><img src="${articulo.foto}" alt="/" class="img-responsive gri-wid"></div>
+                        </g:else>
+                        <div class="info">
+                            <div class="pull-left styl-hdn">
+                                <h3>${articulo.nombre}</h3>
+                            </div>
+                            <div class="pull-right styl-price">
+                                <p><a  href="#" class="item_add"><span class="glyphicon glyphicon-shopping-cart grid-cart" aria-hidden="true"></span> <span class=" item_price">$${articulo.precio}</span></a></p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div></div>
                 </div>
-
-                <p class="lead">
-                    <span class="mr-1">
-                        <del>$200</del>
-                    </span>
-                    <span>$100</span>
-                </p>
-
-                <p class="lead font-weight-bold">Description</p>
-
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit libero eos atque quia ipsa sint voluptatibus!
-                Beatae sit assumenda asperiores iure at maxime atque repellendus maiores quia sapiente.</p>
-
-                <form class="d-flex justify-content-left">
-                    <!-- Default input -->
-                    <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
-                    <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
-                        <i class="fa fa-shopping-cart ml-1"></i>
-                    </button>
-
-                </form>
-
+                <!-- end normal -->
+                <div class="quick-view">
+                    <a href="single.html">Ver</a>
+                </div>
             </div>
-            <!--Content-->
 
-        </div>
-        <!--Grid column-->
 
+        </g:each>
     </div>
-    <!--Grid row-->
-
-    <hr>
-
-    <!--Grid row-->
-    <div class="row d-flex justify-content-center wow fadeIn">
-
-        <!--Grid column-->
-        <div class="col-md-6 text-center">
-
-            <h4 class="my-4 h4">Additional information</h4>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit voluptates,
-            quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
-
-        </div>
-        <!--Grid column-->
-
-    </div>
-    <!--Grid row-->
-
-    <!--Grid row-->
-    <div class="row wow fadeIn">
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-12 mb-4">
-
-            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="">
-
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4">
-
-            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
-
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4">
-
-            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
-
-        </div>
-        <!--Grid column-->
-
-    </div>
-    <!--Grid row-->
 
 </div>
+
 
 </body>
 </html>

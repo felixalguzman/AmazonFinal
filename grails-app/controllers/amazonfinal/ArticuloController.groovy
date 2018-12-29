@@ -3,12 +3,14 @@ package amazonfinal
 import com.fasterxml.jackson.databind.SerializationFeature
 import grails.plugins.rest.client.RestBuilder
 import org.apache.commons.collections.map.MultiValueMap
+import org.springframework.core.ParameterizedTypeReference
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpMethod
 import org.springframework.http.ResponseEntity
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
 import org.springframework.util.LinkedMultiValueMap
 import org.springframework.web.client.RestTemplate
+import org.springframework.web.util.UriComponentsBuilder
 
 class ArticuloController {
 
@@ -17,11 +19,16 @@ class ArticuloController {
 
     def index() {
 
-//        def rest = new RestBuilder()
-//        def cantidadArticulos = rest.get("http://localhost:8081/articulos/cantidad")
-//        println cantidadArticulos.getBody()
+        def rest = new RestTemplate()
 
+        String url = "http://localhost:8084/api/articulos/paginacion"
+        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url)
+                .queryParam("limit", 10)
+                .queryParam("offset", 0)
 
+        ResponseEntity<List<Articulo>> lista = rest.exchange(builder.toUriString(),HttpMethod.GET, null, new ParameterizedTypeReference<List<Articulo>>(){})
+
+        [articulos : lista.getBody()]
     }
 
     def create(){
