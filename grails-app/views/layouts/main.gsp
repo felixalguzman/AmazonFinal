@@ -23,7 +23,9 @@
     <asset:javascript src="jquery-2.1.4.min.js"/>
     <!--bootstrap-js-->
     <asset:javascript src="bootstrap.min.js"/>
-    <!--script-->
+
+    <asset:stylesheet href="custom.css"/>
+
 
 
 
@@ -179,18 +181,18 @@
 
 <g:layoutBody/>
 
-<div class="sub-news">
-    <div class="container">
-        <form>
-            <h3>NewsLetter</h3>
-            <input type="text" class="sub-email" value="Email" onfocus="this.value = '';"
-                   onblur="if (this.value == '') {
-                       this.value = 'Email';
-                   }">
-            <a class="btn btn-default subs-btn" href="#" role="button">SUBSCRIBE</a>
-        </form>
-    </div>
-</div>
+%{--<div class="sub-news">--}%
+    %{--<div class="container">--}%
+        %{--<form>--}%
+            %{--<h3>NewsLetter</h3>--}%
+            %{--<input type="text" class="sub-email" value="Email" onfocus="this.value = '';"--}%
+                   %{--onblur="if (this.value == '') {--}%
+                       %{--this.value = 'Email';--}%
+                   %{--}">--}%
+            %{--<a class="btn btn-default subs-btn" href="#" role="button">SUBSCRIBE</a>--}%
+        %{--</form>--}%
+    %{--</div>--}%
+%{--</div>--}%
 
 <div class="footer-grid">
     <div class="container">

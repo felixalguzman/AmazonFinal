@@ -16,6 +16,7 @@
 
 <body>
 
+<div class="alert alert-warning alert-dismissible fade in" id="alerta" style="display: none" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>La imagen debe ser menor a 2 mb</strong>, escoja una imagen de menor tamaño.</div>
 <style>
 
 img.resize {
@@ -119,13 +120,28 @@ img.resize {
 
     function preview_images() {
         var total_file = document.getElementById("seleccionarFoto").files.length;
-        for (var i = 0; i < total_file; i++) {
-            $('#fotos').append("<img class='img-thumbnail resize' src='" + URL.createObjectURL(event.target.files[i]) + "'>");
 
-            toDataURL(URL.createObjectURL(event.target.files[i]), function (base64) {
-                $('#images').val(base64);
+        if(event.target.files[0].size > 2000000){
+            $("#alerta").removeAttr("style");
 
-            });
+            document.getElementById('alerta').scrollIntoView();
+
+
+        }
+        else {
+
+            for (var i = 0; i < total_file; i++) {
+
+                $('#fotos').children().remove();
+
+                $('#fotos').append("<img class='img-thumbnail resize' src='" + URL.createObjectURL(event.target.files[i]) + "'>");
+
+                toDataURL(URL.createObjectURL(event.target.files[i]), function (base64) {
+                    $('#images').val(base64);
+
+                });
+            }
+
         }
     }
 

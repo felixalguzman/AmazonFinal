@@ -10,8 +10,8 @@ grails:
             events: false
     controllers:
         upload:
-            maxFileSize: 2000000
-            maxRequestSize: 2000000
+            maxFileSize: 2500000
+            maxRequestSize: 2500000
 info:
     app:
         name: '@info.app.name@'

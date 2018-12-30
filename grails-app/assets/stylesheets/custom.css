@@ -1,0 +1,11 @@
+
+/*Para la paginacion*/
+.pagination {
+    display: inline-block;
+    list-style-type: none;
+}
+
+.flexslider {
+    width: 500px;
+    height: 400px;
+}
