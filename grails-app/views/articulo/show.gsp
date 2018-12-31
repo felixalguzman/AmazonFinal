@@ -53,9 +53,10 @@
         <div class="col-md-4 showcase">
             <div class="showcase-rt-top">
                 <div class="pull-left shoe-name">
+
                     <h3>${articulo.nombre}</h3>
 
-                    <p>Men's running shoes</p>
+                    %{--<p>Men's running shoes</p>--}%
                     <h4>$${articulo.precio}</h4>
                 </div>
 
@@ -83,16 +84,20 @@
                     <ul>
                         <li class="qty">
                             <label for="cantidad">Cantidad</label>
-                            <select id="cantidad" class="form-control">
+                            <form id="form">
+
+                                <input type="number" name="id" hidden id="id" value="${articulo.id}">
+                                <select id="cantidad" name="cantidad" class="form-control">
 
 
-                                <g:each in="${1..cantidad}" var="numero">
+                                    <g:each in="${1..cantidad}" var="numero">
 
-                                    <option>${numero}</option>
+                                        <option>${numero}</option>
 
-                                </g:each>
+                                    </g:each>
 
-                            </select>
+                                </select>
+                            </form>
                         </li>
                     </ul>
 
@@ -100,8 +105,8 @@
                 </div>
                 <ul>
                     <li class="ad-2-crt simpleCart_shelfItem">
-                        <a class="btn item_add" href="#" role="button">Add To Cart</a>
-                        <a class="btn" href="#" role="button">Buy Now</a>
+                        <a class="btn item_add" href="#" id="agregar" role="button">Add To Cart</a>
+                        %{--<a class="btn" href="#" role="button">Buy Now</a>--}%
                     </li>
                 </ul>
             </div>
@@ -154,6 +159,35 @@
 </div>
 
 <script>
+
+    $(document).ready(function () {
+
+        $('#agregar').on('click', function (e) {
+
+            e.preventDefault();
+
+            agregarArticulo();
+        })
+
+    });
+
+    function agregarArticulo() {
+
+
+        $.ajax({
+            type: 'POST',
+            dataType: "json",
+            data: $("#form").serialize(),
+            url: "${g.createLink(controller:'cliente',action:'agregarArticulo')}",
+            success: function (ans) {
+
+                console.log(ans);
+                location.reload();
+
+            }
+        });
+
+    }
 
 </script>
 

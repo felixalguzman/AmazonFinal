@@ -11,6 +11,9 @@
     <!--fonts-->
     <link href='//fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
     <!--fonts-->
     <!--bootstrap-->
     <asset:stylesheet href="bootstrap.min.css"/>
@@ -49,13 +52,14 @@
                 <div class="cart box_1">
                     <a href="checkout.html">
                         <h3>
+
                             <div class="total">
-                                <span class="simpleCart_total"></span>(<span id="simpleCart_quantity"
-                                                                             class="simpleCart_quantity"></span>)</div>
+                                <i class="fas fa-shopping-cart"></i><mi:carrito/>
+                            </div>
                         </h3>
                     </a>
 
-                    <p><a href="javascript:" class="simpleCart_empty">Empty Cart</a></p>
+                    %{--<p><a href="javascript:" class="simpleCart_empty">Empty Cart</a></p>--}%
 
                     <div class="clearfix"></div>
                 </div>
@@ -83,7 +87,8 @@
                     <div class="collapse navbar-collapse collapse-pdng" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav nav-font">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Artículos<b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Artículos<b
+                                        class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/articulo/create">Crear</a></li>
                                     <li><a href="/articulo/list">Lista</a></li>
@@ -180,16 +185,16 @@
 <g:layoutBody/>
 
 %{--<div class="sub-news">--}%
-    %{--<div class="container">--}%
-        %{--<form>--}%
-            %{--<h3>NewsLetter</h3>--}%
-            %{--<input type="text" class="sub-email" value="Email" onfocus="this.value = '';"--}%
-                   %{--onblur="if (this.value == '') {--}%
-                       %{--this.value = 'Email';--}%
-                   %{--}">--}%
-            %{--<a class="btn btn-default subs-btn" href="#" role="button">SUBSCRIBE</a>--}%
-        %{--</form>--}%
-    %{--</div>--}%
+%{--<div class="container">--}%
+%{--<form>--}%
+%{--<h3>NewsLetter</h3>--}%
+%{--<input type="text" class="sub-email" value="Email" onfocus="this.value = '';"--}%
+%{--onblur="if (this.value == '') {--}%
+%{--this.value = 'Email';--}%
+%{--}">--}%
+%{--<a class="btn btn-default subs-btn" href="#" role="button">SUBSCRIBE</a>--}%
+%{--</form>--}%
+%{--</div>--}%
 %{--</div>--}%
 
 <div class="footer-grid">
@@ -246,5 +251,10 @@
         </div>
     </div>
 </div>
+
+
+<script>
+
+</script>
 </body>
 </html>
