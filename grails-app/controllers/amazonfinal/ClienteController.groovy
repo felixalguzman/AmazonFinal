@@ -7,7 +7,9 @@ import org.springframework.web.client.RestTemplate
 
 class ClienteController {
 
-    def index() { }
+    def index() {
+
+    }
 
     def registrar(){}
 
@@ -17,10 +19,10 @@ class ClienteController {
 
         HttpEntity<Cliente> request = new HttpEntity<>(cliente)
 
-        ResponseEntity<Cliente> exchange = rest.exchange("http://localhost:8084/api/clientes/devolver", HttpMethod.GET, request, Cliente.class)
+        ResponseEntity<Cliente> response = rest.postForEntity("http://localhost:8084/api/clientes/devolver",request, Cliente.class)
 
-//        println "nuevo id de cliente: " + exchange.getBody().id
+        println "nuevo id de cliente: " + response.getBody().getId()
 
-        redirect(action: registrar())
+        redirect(uri:'/cliente/registrar')
     }
 }

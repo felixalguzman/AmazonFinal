@@ -2,7 +2,7 @@ package amazonfinal
 
 class Cliente {
 
-
+    Long id
     String foto
     String nombre
     String correo
@@ -12,7 +12,7 @@ class Cliente {
     String contrasena
 
     static constraints = {
-
+        id nullable: true
         telefono nullable: true
         direccion nullable: true
         fechaNacimiento nullable: true

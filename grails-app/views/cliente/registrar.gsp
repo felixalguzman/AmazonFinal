@@ -45,7 +45,7 @@
                 <div class="form-group row">
                     <div class="col-md-6">
                         <label for="contrasena">Contraseña:</label>
-                        <input id="contrasena" class="form-control" type="password" value="" required>
+                        <input id="contrasena" name="contrasena" class="form-control" type="password" value="" required>
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@
                     <div class="col-md-3">
 
                         <label for="telefono">Teléfono:</label>
-                        <input id="telefono" class="form-control" name="telefono" type="tel" value="">
+                        <input id="telefono" class="form-control" name="telefono" type="text" value="">
                     </div>
                 </div>
                 <input type="submit" value="Registrar">
