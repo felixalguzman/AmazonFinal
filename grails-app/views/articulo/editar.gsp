@@ -36,19 +36,20 @@ img.resize {
     <div class="container">
         <h3>Nuevo Artículo</h3>
 
-        <g:form action="salvar" name="articulo" enctype="multipart/form-data">
+        <g:form action="actualizar" name="articulo" method="PUT" enctype="multipart/form-data">
+
+            <input hidden name="id" type="number" value="${articulo.id}">
 
             <div class="form-group">
 
                 <label for="nombre">Nombre</label>
-                <input id="nombre" class="form-control " name="nombre" type="text" required>
+                <input id="nombre" class="form-control" value="${articulo.nombre}" name="nombre" type="text" required>
             </div>
 
 
             <div class="form-group">
-
                 <label for="descripcion">Descripción</label>
-                <input id="descripcion" class="form-control " name="descripcion" type="text" width="300px">
+                <input id="descripcion" class="form-control" value="${articulo.descripcion}" name="descripcion" type="text" width="300px">
             </div>
 
             <div class="form-group">
@@ -57,7 +58,7 @@ img.resize {
 
                     <label for="cantidad">Cantidad</label>
 
-                    <input id="cantidad" class="form-control " name="cantidadDisponible" type="number" min="1" value="1"
+                    <input id="cantidad" class="form-control "  name="cantidadDisponible" type="number" min="1" value="${articulo.cantidadDisponible}"
                            required>
 
                 </div>
@@ -68,7 +69,7 @@ img.resize {
 
                     <div class="input-group">
                         <span class="input-group-addon">$</span>
-                        <input id="precio" class="form-control " name="precio" type="number" min="1" value="1" required>
+                        <input id="precio" class="form-control " name="precio" type="number" min="1" value="${articulo.precio}" required>
 
                     </div>
                 </div>
@@ -76,11 +77,15 @@ img.resize {
                 <div class="col-md-4">
 
                     <label for="images">Imagenes</label>
-                    <input type="file" accept="image/*" class="form-control" id="seleccionarFoto" name="images[]" onchange="preview_images();"
+                    <input type="file" class="form-control" disabled="disabled" id="seleccionarFoto" name="images[]" onchange="preview_images();"
                            data-buttonText="Elegir fotos"/>
 
-                    <input id="images" hidden name="foto">
+                    <input id="images" type="text" hidden name="foto" value="${articulo.foto}">
 
+                </div>
+
+                <div class="col-md-4">
+                    <button id="quitar" class="eliminar">Eliminar foto</button>
                 </div>
             </div>
 
@@ -92,7 +97,7 @@ img.resize {
 
                     <li class="ad-2-crt simpleCart_shelfItem">
 
-                        <input class="btn" type="submit" href="#" role="button" value="Crear"/>
+                        <input class="btn" type="submit" href="#" role="button" value="Actualizar"/>
                     </li>
                 </ul>
             </div>
@@ -110,6 +115,7 @@ img.resize {
 
         <ul class="slides" id="fotos">
 
+            <img class='img-thumbnail resize' src="${articulo.foto}"/>
         </ul>
 
     </div>
@@ -117,6 +123,17 @@ img.resize {
 
 
 <script>
+
+    $(document).ready(function () {
+
+        $('#quitar').on('click', function (e) {
+
+            e.preventDefault();
+
+            quitarFoto();
+        })
+
+    });
 
     function preview_images() {
         var total_file = document.getElementById("seleccionarFoto").files.length;
@@ -157,6 +174,18 @@ img.resize {
         xhr.open('GET', url);
         xhr.responseType = 'blob';
         xhr.send();
+    }
+
+    function quitarFoto() {
+
+        $('#images').val(" ");
+        $('#fotos').children().remove();
+
+        var file = document.getElementById("seleccionarFoto");
+
+        file.removeAttribute('value');
+        file.parentNode.replaceChild(file.cloneNode(true),file);
+
     }
 
 </script>

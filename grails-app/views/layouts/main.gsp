@@ -39,11 +39,11 @@
     <div class="container">
         <div class="header-top">
             <div class="logo">
-                <a href="/inicio">N-AIR</a>
+                <a href="/inicio">Drand</a>
             </div>
 
             <div class="login-bars">
-                <a class="btn btn-default log-bar" href="register.html" role="button">Sign up</a>
+                <a class="btn btn-default log-bar" href="/cliente/registrar" role="button">Registrar</a>
                 <a class="btn btn-default log-bar" href="signup.html" role="button">Login</a>
 
                 <div class="cart box_1">
@@ -86,10 +86,8 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Artículos<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/articulo/create">Crear</a></li>
-                                    <li><a href="products.html">Tees</a></li>
-                                    <li><a href="products.html">Tops</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="products.html">Tracks</a></li>
+                                    <li><a href="/articulo/list">Lista</a></li>
+
                                     <li class="divider"></li>
                                     <li><a href="products.html">Gear</a></li>
                                 </ul>

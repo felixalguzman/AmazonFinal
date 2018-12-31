@@ -57,6 +57,43 @@ a.log-bar:hover,a.log-bar:focus{
     color: #fff;
     transition: 0.5s all;
 }
+
+.eliminar{
+    background-color: #100B0B;
+    color: #aaa;
+    border-radius: 0;
+    border: 0;
+    padding: 4px 12px;
+    font-family: 'Pathway Gothic One';
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.editar{
+    background-color: #100B0B;
+    color: #aaa;
+    border-radius: 0;
+    border: 0;
+    padding: 4px 12px;
+    font-family: 'Pathway Gothic One';
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.eliminar:hover, .eliminar:focus{
+    background: #f90;
+    color: #909090;
+    transition: 0.5s all;
+}
+
+.editar:hover, .editar:focus{
+    background: #08c;
+    color: #909090;
+    transition: 0.5s all;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -1694,6 +1731,13 @@ div textarea {
         margin: -72px 0px 0px;
     }
     a.log-bar {
+        padding: 4px 7px;
+        font-size: 12.5px;
+    }
+    .eliminar{
+        padding: 4px 7px;
+        font-size: 12.5px;
+    } .editar{
         padding: 4px 7px;
         font-size: 12.5px;
     }
