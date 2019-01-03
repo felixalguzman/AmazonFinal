@@ -1,5 +1,7 @@
 ---
 grails:
+    server:
+        port: 8089
     profile: web
     codegen:
         defaultPackage: amazonfinal
