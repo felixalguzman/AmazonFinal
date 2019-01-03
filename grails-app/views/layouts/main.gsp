@@ -46,8 +46,16 @@
             </div>
 
             <div class="login-bars">
-                <a class="btn btn-default log-bar" href="/cliente/registrar" role="button">Registrar</a>
-                <a class="btn btn-default log-bar" href="signup.html" role="button">Login</a>
+                <g:if test="${session.getAttribute("cliente") != null}">
+
+                    <a class="btn btn-default log-bar" href="signup.html" role="button">Salir</a>
+
+                </g:if>
+                <g:else>
+                    <a class="btn btn-default log-bar" href="/cliente/registrar" role="button">Registrar</a>
+                    <a class="btn btn-default log-bar" href="signup.html" role="button">Login</a>
+
+                </g:else>
 
                 <div class="cart box_1">
                     <a href="checkout.html">
@@ -97,71 +105,71 @@
                                     <li><a href="products.html">Gear</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men<b class="caret"></b></a>
-                                <ul class="dropdown-menu multi-column columns-3">
-                                    <div class="row">
-                                        <div class="col-sm-4 menu-img-pad">
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="products.html">Joggers</a></li>
-                                                <li><a href="products.html">Foot Ball</a></li>
-                                                <li><a href="products.html">Cricket</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="products.html">Tennis</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="products.html">Casual</a></li>
-                                            </ul>
-                                        </div>
+                            %{--<li class="dropdown">--}%
+                                %{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Men<b class="caret"></b></a>--}%
+                                %{--<ul class="dropdown-menu multi-column columns-3">--}%
+                                    %{--<div class="row">--}%
+                                        %{--<div class="col-sm-4 menu-img-pad">--}%
+                                            %{--<ul class="multi-column-dropdown">--}%
+                                                %{--<li><a href="products.html">Joggers</a></li>--}%
+                                                %{--<li><a href="products.html">Foot Ball</a></li>--}%
+                                                %{--<li><a href="products.html">Cricket</a></li>--}%
+                                                %{--<li class="divider"></li>--}%
+                                                %{--<li><a href="products.html">Tennis</a></li>--}%
+                                                %{--<li class="divider"></li>--}%
+                                                %{--<li><a href="products.html">Casual</a></li>--}%
+                                            %{--</ul>--}%
+                                        %{--</div>--}%
 
-                                        <div class="col-sm-4 menu-img-pad">
-                                            <a href="#"><img src="/assets/menu1.jpg" alt="/"
-                                                             class="img-rsponsive men-img-wid"/></a>
-                                        </div>
+                                        %{--<div class="col-sm-4 menu-img-pad">--}%
+                                            %{--<a href="#"><img src="/assets/menu1.jpg" alt="/"--}%
+                                                             %{--class="img-rsponsive men-img-wid"/></a>--}%
+                                        %{--</div>--}%
 
-                                        <div class="col-sm-4 menu-img-pad">
-                                            <a href="#"><img src="/assets/menu2.jpg" alt="/"
-                                                             class="img-rsponsive men-img-wid"/></a>
-                                        </div>
-                                    </div>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Women<b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu multi-column columns-2">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="products.html">Tops</a></li>
-                                                <li><a href="products.html">Bottoms</a></li>
-                                                <li><a href="products.html">Yoga Pants</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="products.html">Sports</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="products.html">Gym</a></li>
-                                            </ul>
-                                        </div>
+                                        %{--<div class="col-sm-4 menu-img-pad">--}%
+                                            %{--<a href="#"><img src="/assets/menu2.jpg" alt="/"--}%
+                                                             %{--class="img-rsponsive men-img-wid"/></a>--}%
+                                        %{--</div>--}%
+                                    %{--</div>--}%
+                                %{--</ul>--}%
+                            %{--</li>--}%
+                            %{--<li class="dropdown">--}%
+                                %{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Women<b class="caret"></b>--}%
+                                %{--</a>--}%
+                                %{--<ul class="dropdown-menu multi-column columns-2">--}%
+                                    %{--<div class="row">--}%
+                                        %{--<div class="col-sm-6">--}%
+                                            %{--<ul class="multi-column-dropdown">--}%
+                                                %{--<li><a href="products.html">Tops</a></li>--}%
+                                                %{--<li><a href="products.html">Bottoms</a></li>--}%
+                                                %{--<li><a href="products.html">Yoga Pants</a></li>--}%
+                                                %{--<li class="divider"></li>--}%
+                                                %{--<li><a href="products.html">Sports</a></li>--}%
+                                                %{--<li class="divider"></li>--}%
+                                                %{--<li><a href="products.html">Gym</a></li>--}%
+                                            %{--</ul>--}%
+                                        %{--</div>--}%
 
-                                        <div class="col-sm-6">
-                                            <a href="#"><img src="/assets/menu3.jpg" alt="/"
-                                                             class="img-rsponsive men-img-wid"/></a>
-                                        </div>
-                                    </div>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">kids<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="products.html">Tees</a></li>
-                                    <li><a href="products.html">Shorts</a></li>
-                                    <li><a href="products.html">Gear</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="products.html">Watches</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="products.html">Shoes</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Catch</a></li>
+                                        %{--<div class="col-sm-6">--}%
+                                            %{--<a href="#"><img src="/assets/menu3.jpg" alt="/"--}%
+                                                             %{--class="img-rsponsive men-img-wid"/></a>--}%
+                                        %{--</div>--}%
+                                    %{--</div>--}%
+                                %{--</ul>--}%
+                            %{--</li>--}%
+                            %{--<li class="dropdown">--}%
+                                %{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">kids<b class="caret"></b></a>--}%
+                                %{--<ul class="dropdown-menu">--}%
+                                    %{--<li><a href="products.html">Tees</a></li>--}%
+                                    %{--<li><a href="products.html">Shorts</a></li>--}%
+                                    %{--<li><a href="products.html">Gear</a></li>--}%
+                                    %{--<li class="divider"></li>--}%
+                                    %{--<li><a href="products.html">Watches</a></li>--}%
+                                    %{--<li class="divider"></li>--}%
+                                    %{--<li><a href="products.html">Shoes</a></li>--}%
+                                %{--</ul>--}%
+                            %{--</li>--}%
+                            %{--<li><a href="contact.html">Catch</a></li>--}%
 
                             <div class="clearfix"></div>
                         </ul>
@@ -199,40 +207,40 @@
 
 <div class="footer-grid">
     <div class="container">
-        <div class="col-md-2 re-ft-grd">
-            <h3>Categories</h3>
-            <ul class="categories">
-                <li><a href="#">Men</a></li>
-                <li><a href="#">Women</a></li>
-                <li><a href="#">Kids</a></li>
-                <li><a href="#">Formal</a></li>
-                <li><a href="#">Casuals</a></li>
-                <li><a href="#">Sports</a></li>
-            </ul>
-        </div>
+        %{--<div class="col-md-2 re-ft-grd">--}%
+            %{--<h3>Categories</h3>--}%
+            %{--<ul class="categories">--}%
+                %{--<li><a href="#">Men</a></li>--}%
+                %{--<li><a href="#">Women</a></li>--}%
+                %{--<li><a href="#">Kids</a></li>--}%
+                %{--<li><a href="#">Formal</a></li>--}%
+                %{--<li><a href="#">Casuals</a></li>--}%
+                %{--<li><a href="#">Sports</a></li>--}%
+            %{--</ul>--}%
+        %{--</div>--}%
 
-        <div class="col-md-2 re-ft-grd">
-            <h3>Short links</h3>
-            <ul class="shot-links">
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Delivery</a></li>
-                <li><a href="#">Return Policy</a></li>
-                <li><a href="#">Terms & conditions</a></li>
-                <li><a href="contact.html">Sitemap</a></li>
-            </ul>
-        </div>
+        %{--<div class="col-md-2 re-ft-grd">--}%
+            %{--<h3>Short links</h3>--}%
+            %{--<ul class="shot-links">--}%
+                %{--<li><a href="#">Contact us</a></li>--}%
+                %{--<li><a href="#">Support</a></li>--}%
+                %{--<li><a href="#">Delivery</a></li>--}%
+                %{--<li><a href="#">Return Policy</a></li>--}%
+                %{--<li><a href="#">Terms & conditions</a></li>--}%
+                %{--<li><a href="contact.html">Sitemap</a></li>--}%
+            %{--</ul>--}%
+        %{--</div>--}%
 
-        <div class="col-md-6 re-ft-grd">
-            <h3>Social</h3>
-            <ul class="social">
-                <li><a href="#" class="fb">facebook</a></li>
-                <li><a href="#" class="twt">twitter</a></li>
-                <li><a href="#" class="gpls">g+ plus</a></li>
+        %{--<div class="col-md-6 re-ft-grd">--}%
+            %{--<h3>Social</h3>--}%
+            %{--<ul class="social">--}%
+                %{--<li><a href="#" class="fb">facebook</a></li>--}%
+                %{--<li><a href="#" class="twt">twitter</a></li>--}%
+                %{--<li><a href="#" class="gpls">g+ plus</a></li>--}%
 
-                <div class="clearfix"></div>
-            </ul>
-        </div>
+                %{--<div class="clearfix"></div>--}%
+            %{--</ul>--}%
+        %{--</div>--}%
 
         <div class="col-md-2 re-ft-grd">
             <div class="bt-logo">
