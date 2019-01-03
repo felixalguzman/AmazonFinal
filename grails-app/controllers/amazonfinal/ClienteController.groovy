@@ -21,10 +21,14 @@ class ClienteController {
         HttpEntity<Cliente> request = new HttpEntity<>(cliente)
 
         ResponseEntity<Cliente> response = rest.postForEntity("http://localhost:8084/api/clientes/devolver", request, Cliente.class)
-
+        def rest2 = new RestTemplate()
+        rest2.exchange("http://localhost:8084/api/correos/nuevo", HttpMethod.POST, request, Cliente.class)
+                //                 Cliente.class);
         println "nuevo id de cliente: " + response.getBody().getId()
 
-        redirect(uri: '/cliente/registrar')
+        session["cliente"] = response.getBody().getId()
+
+        redirect(uri: '/articulo/index?offset=0')
     }
 
     def agregarArticulo(int id, int cantidad) {
