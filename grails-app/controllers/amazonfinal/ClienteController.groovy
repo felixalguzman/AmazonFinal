@@ -28,7 +28,7 @@ class ClienteController {
 
         session["cliente"] = response.getBody().getId()
 
-        redirect(uri: '/articulo/index?offset=0')
+        redirect(uri: '/articulo/index?offset=0 ')
     }
 
     def agregarArticulo(int id, int cantidad) {
